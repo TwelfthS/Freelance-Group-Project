@@ -9,7 +9,7 @@ public class Enemy : MonoBehaviour
     public DetectionZone detectionZone;
     public GameObject player;
     public bool seesPlayer = false;
-    public Rigidbody2D rb;
+    public Rigidbody rb;
     public float moveSpeed = 5;
     public int damage = 4;
     public float attackCooldown = 0;
@@ -19,7 +19,7 @@ public class Enemy : MonoBehaviour
         // enemyBattle = GetComponent<EnemyBattle>();
         hp = GetComponent<HPHandler>();
         detectionZone = GetComponent<DetectionZone>();
-        rb = GetComponent<Rigidbody2D>();
+        rb = GetComponent<Rigidbody>();
     }
 
     void Update()
@@ -30,7 +30,6 @@ public class Enemy : MonoBehaviour
     }
 
     public void Hit(int damage) {
-        Debug.Log("Hit?");
         hp.Hit(damage);
     }
 
@@ -45,13 +44,14 @@ public class Enemy : MonoBehaviour
     public void Action() {
         if (seesPlayer) {
             Cooldown();
-            float distance = Vector2.Distance(player.transform.position, transform.position);
-            if (distance < 3 && attackCooldown <= 0) {
+            float distance = Vector3.Distance(player.transform.position, transform.position);
+            if (distance < 1 && attackCooldown <= 0) {
                 AttackPlayer(damage);
                 attackCooldown = maxCooldown;
             }
             moveToPlayer(distance);
         } else {
+            // Debug.Log(this.gameObject.name + " looking for player...");
             checkForPlayer();
         }
     }
@@ -63,12 +63,12 @@ public class Enemy : MonoBehaviour
     }
 
     private void moveToPlayer(float currentDistance) {
-        if (currentDistance > 3) {
-            Vector2 dir = player.transform.position - transform.position;
+        if (currentDistance > 1) {
+            Vector3 dir = player.transform.position - transform.position;
             dir.Normalize();
-            rb.velocity = new Vector2(dir.x * moveSpeed, dir.y * moveSpeed);            
+            rb.velocity = new Vector3(dir.x * moveSpeed, 0, dir.z * moveSpeed);            
         } else {
-            rb.velocity = Vector2.zero;
+            rb.velocity = Vector3.zero;
         }
 
     }

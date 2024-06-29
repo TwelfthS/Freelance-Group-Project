@@ -7,7 +7,6 @@ public class PlayerBattle : MonoBehaviour
 {
     public Enemy enemy;
     public Skill[] playerSkills;
-    public HPHandler enemyHP;
     public int currentSkillId = 0;
     public Skill currentSkill;
 

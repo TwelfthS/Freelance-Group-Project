@@ -4,21 +4,26 @@ using UnityEngine;
 
 public class PlayerMovement : MonoBehaviour
 {
-    public Rigidbody2D rb;
+    public Rigidbody rb;
     float dirX = 0;
-    float dirY = 0;
+    float dirZ = 0;
     float moveSpeed = 7;
+    public HPHandler hp;
     // Start is called before the first frame update
     void Start()
     {
-        rb = GetComponent<Rigidbody2D>();
+        rb = GetComponent<Rigidbody>();
+        hp = GetComponent<HPHandler>();
     }
 
     // Update is called once per frame
     void Update()
     {
-        dirX = Input.GetAxisRaw("Horizontal");
-        dirY = Input.GetAxisRaw("Vertical");
-        rb.velocity = new Vector2(dirX * moveSpeed, dirY * moveSpeed);
+        if (hp.isAlive) {
+            dirX = Input.GetAxisRaw("Horizontal");
+            dirZ = Input.GetAxisRaw("Vertical");
+            rb.velocity = new Vector3(dirX * moveSpeed, 0, dirZ * moveSpeed);        
+        }
+
     }
 }
