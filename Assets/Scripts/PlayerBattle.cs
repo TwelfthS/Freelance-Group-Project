@@ -5,26 +5,34 @@ using UnityEngine;
 
 public class PlayerBattle : MonoBehaviour
 {
-    public Enemy enemy;
+    public List<Enemy> enemies = new List<Enemy>();
     public Skill[] playerSkills;
     public int currentSkillId = 0;
     public Skill currentSkill;
+    public Collider attackCollider;
+    public HPHandler hp;
+    public Player player;
 
     void Start()
     {
         playerSkills = GetComponent<SkillsHandler>().availableSkills;
         currentSkill = playerSkills[currentSkillId];
+        attackCollider = GetComponent<BoxCollider>();
+        hp = GetComponent<HPHandler>();
+        player = GetComponent<Player>();
     }
 
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Alpha1)) {
-            chooseNextSkill();
-        } else if (Input.GetKeyDown(KeyCode.Alpha2)) {
-            choosePrevSkill();
-        }
-        if (Input.GetKeyDown(KeyCode.Space) && enemy) {
-            Attack(currentSkill.damage);
+        if (hp.isAlive) {
+            if (Input.GetKeyDown(KeyCode.Alpha1)) {
+                chooseNextSkill();
+            } else if (Input.GetKeyDown(KeyCode.Alpha2)) {
+                choosePrevSkill();
+            }
+            if (Input.GetKeyDown(KeyCode.Space)) {
+                Attack(currentSkill.damage);
+            }
         }
     }
 
@@ -53,14 +61,39 @@ public class PlayerBattle : MonoBehaviour
         Debug.Log("You picked a skill called " + skill.name + "!");
     }
 
-    public void Attack(int damage) {
-        if (Vector2.Distance(enemy.transform.position, transform.position) < 5f) {
-            enemy.Hit(damage);
+    public void Attack(float damage) {
+        damage = player.AttackBonuses(damage);
+        Debug.Log(enemies.Count);
+        if (enemies.Count > 0) {
+            Enemy enemy = enemies[0];
             Debug.Log("Enemy hit with " + currentSkill.name + " and got " + damage + " of damage!");
+            Debug.Log(enemy.gameObject.name);
+            enemy.Hit(damage);
+            if (!enemy.hp.isAlive) {
+                Debug.Log("here");
+                enemies.RemoveAt(0);
+            }
         }
     }
 
-    public void SetEnemy(GameObject _enemy) {
-        enemy = _enemy.GetComponent<Enemy>();
+    // public void SetEnemy(Enemy _enemy) {
+    //     enemy = _enemy;
+    // }
+
+    void OnTriggerEnter(Collider collider) {
+        Debug.Log(collider.gameObject.name);
+        Enemy enemy = collider.gameObject.GetComponent<Enemy>();
+        if (enemy != null && !enemies.Contains(enemy)) {
+            enemies.Add(enemy);
+        }
+        Debug.Log("added " + enemies);
+    }
+
+    void OnTriggerExit(Collider collider) {
+        Enemy enemy = collider.gameObject.GetComponent<Enemy>();
+        if (enemy != null) {
+            enemies.Remove(enemy);
+        }
+        Debug.Log("removed" + enemies);
     }
 }

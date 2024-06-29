@@ -4,19 +4,19 @@ using UnityEngine;
 
 public class Enemy : MonoBehaviour
 {
-    // public EnemyBattle enemyBattle;
     public HPHandler hp;
     public DetectionZone detectionZone;
-    public GameObject player;
+    public Player player;
     public bool seesPlayer = false;
     public Rigidbody rb;
-    public float moveSpeed = 5;
-    public int damage = 4;
+    public float moveSpeed = 3;
+    [SerializeField]
+    private int damage = 4;
     public float attackCooldown = 0;
     private float maxCooldown = 1;
+    public DNAChip drop;
     void Start()
     {
-        // enemyBattle = GetComponent<EnemyBattle>();
         hp = GetComponent<HPHandler>();
         detectionZone = GetComponent<DetectionZone>();
         rb = GetComponent<Rigidbody>();
@@ -29,20 +29,12 @@ public class Enemy : MonoBehaviour
         }
     }
 
-    public void Hit(int damage) {
+    public void Hit(float damage) {
         hp.Hit(damage);
     }
 
-    // public void StartCombat() {
-    //     inCombat = true;
-    // }
-
-    // public void StopCombat() {
-    //     inCombat = false;
-    // }
-
     public void Action() {
-        if (seesPlayer) {
+        if (seesPlayer && player.hp.isAlive) {
             Cooldown();
             float distance = Vector3.Distance(player.transform.position, transform.position);
             if (distance < 1 && attackCooldown <= 0) {
@@ -51,7 +43,6 @@ public class Enemy : MonoBehaviour
             }
             moveToPlayer(distance);
         } else {
-            // Debug.Log(this.gameObject.name + " looking for player...");
             checkForPlayer();
         }
     }
@@ -76,13 +67,19 @@ public class Enemy : MonoBehaviour
     private void checkForPlayer() {
         if (detectionZone.seesPlayer) {
             seesPlayer = true;
-            player = detectionZone.player;
-            player.GetComponent<PlayerBattle>().SetEnemy(this.gameObject);
+            player = detectionZone.player.GetComponent<Player>();
         }
     }
 
-    private void AttackPlayer(int damage) {
-        player.GetComponent<HPHandler>().Hit(damage);
+    private void AttackPlayer(float damage) {
         Debug.Log("You got hit!");
+        player.Hit(damage);
+    }
+
+    public void LeaveLoot() {
+        if (drop != null) {
+            player.GetLoot(drop);
+        }
+
     }
 }

@@ -5,6 +5,7 @@ using UnityEngine;
 public class SkillsHandler : MonoBehaviour
 {
     public Skill[] availableSkills;
+    public bool defaultSkillMastery = true;
     void Start()
     {
         
@@ -14,5 +15,9 @@ public class SkillsHandler : MonoBehaviour
     void Update()
     {
         
+    }
+
+    public float DefaultSkill() {
+        return 4;
     }
 }

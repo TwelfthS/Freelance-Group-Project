@@ -5,7 +5,7 @@ using UnityEngine;
 public class Skill : MonoBehaviour
 {
     public string skillName;
-    public int damage;
+    public float damage;
     // Start is called before the first frame update
     void Start()
     {

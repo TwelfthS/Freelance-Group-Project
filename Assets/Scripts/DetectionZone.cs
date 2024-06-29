@@ -9,11 +9,9 @@ public class DetectionZone : MonoBehaviour
 
     private void OnTriggerEnter(Collider collider)
     {
-        Debug.Log(this.gameObject.name + " entered " + collider.gameObject.name);
         if (collider.gameObject.GetComponent<PlayerMovement>() != null) {
             player = collider.gameObject;
             seesPlayer = true;
-            Debug.Log("here");
         }
     }
 

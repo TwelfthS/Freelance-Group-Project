@@ -21,7 +21,10 @@ public class HPHandler : MonoBehaviour
     public void Death() {
         isAlive = false;
         Debug.Log(this.gameObject.name + " is dead!");
-        if (this.gameObject.GetComponent<PlayerMovement>() == null) {
+        Enemy enemyCheck = this.gameObject.GetComponent<Enemy>();
+        if (enemyCheck != null) {
+            Debug.Log(this.gameObject.name + "getting destroyed");
+            enemyCheck.LeaveLoot();
             Destroy(this.gameObject);
         }
     }
