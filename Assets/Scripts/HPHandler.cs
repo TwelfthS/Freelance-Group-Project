@@ -6,23 +6,16 @@ public class HPHandler : MonoBehaviour
 {
     public float currentHP = 10;
     public bool isAlive = true;
-
-    void Start()
-    {
-        
-    }
-
-    void Update()
-    {
-
-    }
+    [SerializeField] private HealthBar healthBar;
 
     public void Hit(float damage) {
         currentHP -= damage;
 
         if (currentHP <= 0) {
+            currentHP = 0;
             Death();
         }
+        healthBar.UpdateHealthBar(currentHP/10);
     }
 
     public void Death() {
