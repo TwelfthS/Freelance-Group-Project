@@ -14,6 +14,8 @@ GameObject:
   - component: {fileID: -7426816055735884605}
   - component: {fileID: -6341372743575629751}
   - component: {fileID: 1016280628039425112}
+  - component: {fileID: 8780733292587382510}
+  - component: {fileID: 2212331711692344362}
   m_Layer: 0
   m_Name: Enemy
   m_TagString: Untagged
@@ -114,7 +116,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 64774c50cff107945b5996ec5f55c104, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  attackCollider: {fileID: 0}
   detectionZone: {fileID: 0}
   player: {fileID: 0}
   seesPlayer: 0
@@ -184,3 +185,31 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 4
+--- !u!114 &8780733292587382510
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8776562075480167859}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 24ca3bb46ffd94c4596148b5183bde09, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  player: {fileID: 0}
+  seesPlayer: 0
+--- !u!114 &2212331711692344362
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8776562075480167859}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8f512d7d3871f0e4794edacf4a3bdc91, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  enemyBattle: {fileID: 0}
+  hp: {fileID: 0}

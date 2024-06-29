@@ -274,10 +274,7 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents:
-    - targetCorrespondingSourceObject: {fileID: 8776562075480167859, guid: ea53195a1103ff64a8a9e2191affc9b0, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 1413002509}
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ea53195a1103ff64a8a9e2191affc9b0, type: 3}
 --- !u!1 &539007754
 GameObject:
@@ -325,6 +322,63 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   skillName: first
   damage: 4
+--- !u!1001 &942732461
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 2496376285236392485, guid: ea53195a1103ff64a8a9e2191affc9b0, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 4.63
+      objectReference: {fileID: 0}
+    - target: {fileID: 2496376285236392485, guid: ea53195a1103ff64a8a9e2191affc9b0, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0.49225068
+      objectReference: {fileID: 0}
+    - target: {fileID: 2496376285236392485, guid: ea53195a1103ff64a8a9e2191affc9b0, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2496376285236392485, guid: ea53195a1103ff64a8a9e2191affc9b0, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2496376285236392485, guid: ea53195a1103ff64a8a9e2191affc9b0, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2496376285236392485, guid: ea53195a1103ff64a8a9e2191affc9b0, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2496376285236392485, guid: ea53195a1103ff64a8a9e2191affc9b0, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2496376285236392485, guid: ea53195a1103ff64a8a9e2191affc9b0, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2496376285236392485, guid: ea53195a1103ff64a8a9e2191affc9b0, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2496376285236392485, guid: ea53195a1103ff64a8a9e2191affc9b0, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8776562075480167859, guid: ea53195a1103ff64a8a9e2191affc9b0, type: 3}
+      propertyPath: m_Name
+      value: Slow tough enemy
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: ea53195a1103ff64a8a9e2191affc9b0, type: 3}
 --- !u!1 &1015991706
 GameObject:
   m_ObjectHideFlags: 0
@@ -395,7 +449,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   enemy: {fileID: 0}
-  enemiesField: {fileID: 0}
   playerSkills: []
   enemyHP: {fileID: 0}
   currentSkillId: 0
@@ -554,25 +607,6 @@ MonoBehaviour:
   skillButtonPrefab: {fileID: 1969831547832945197, guid: 6ad540844727c854dab5620aba667b42, type: 3}
   battle: {fileID: 0}
   player: {fileID: 1371220160}
---- !u!1 &1413002502 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 8776562075480167859, guid: ea53195a1103ff64a8a9e2191affc9b0, type: 3}
-  m_PrefabInstance: {fileID: 399577035}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &1413002509
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1413002502}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 24ca3bb46ffd94c4596148b5183bde09, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  detectedColliders: []
-  player: {fileID: 0}
 --- !u!1 &1474447492
 GameObject:
   m_ObjectHideFlags: 0
@@ -921,3 +955,4 @@ SceneRoots:
   - {fileID: 1955366923}
   - {fileID: 1015991707}
   - {fileID: 399577035}
+  - {fileID: 942732461}
