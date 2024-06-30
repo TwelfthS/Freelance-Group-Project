@@ -1,0 +1,13 @@
+fileFormatVersion: 2
+guid: 9c07923ea76f243aeb198ad6687780a9
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences:
+  - _external: {instanceID: 0}
+  - _dialogBox: {fileID: 1970848160145955977, guid: f41e17201005f4dd38739aa332afea76, type: 3}
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
