@@ -279,7 +279,7 @@ Rigidbody:
   m_UseGravity: 0
   m_IsKinematic: 0
   m_Interpolate: 0
-  m_Constraints: 112
+  m_Constraints: 116
   m_CollisionDetection: 0
 --- !u!136 &3657165308965666640
 CapsuleCollider:
@@ -340,6 +340,9 @@ MonoBehaviour:
   inventory: {fileID: 0}
   defaultAccuracy: 0.4
   defaultCritRate: 0.15
+  seller: {fileID: 0}
+  canBuy: 0
+  money: 0
 --- !u!65 &6066810998299025300
 BoxCollider:
   m_ObjectHideFlags: 0

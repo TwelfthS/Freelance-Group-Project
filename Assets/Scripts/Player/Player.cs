@@ -9,6 +9,9 @@ public class Player : MonoBehaviour
     public InventoryManager inventory;
     public float defaultAccuracy = 0.4f;
     public float defaultCritRate = 0.15f;
+    public Seller seller;
+    public bool canBuy = false;
+    public float money;
     void Start()
     {
         hp = GetComponent<HPHandler>();
@@ -17,7 +20,10 @@ public class Player : MonoBehaviour
 
     void Update()
     {
-        
+        if (canBuy && Input.GetKeyDown(KeyCode.E)) {
+            Debug.Log("Started Trade");
+            seller.StartTrade();
+        }
     }
 
     public float AttackBonuses(float damage) {
@@ -40,9 +46,14 @@ public class Player : MonoBehaviour
         hp.Hit(damage);
     }
 
-    public void GetLoot(DNAChip drop) {
+    public void GetLoot(DNAChip drop, float moneyDrop) {
+        GetChip(drop);
+        money += moneyDrop;
+    }
+
+    public void GetChip(DNAChip drop) {
         inventory.AddChip(drop);
-        drop.transform.parent = transform;
+        drop.transform.parent = transform; 
     }
 
     public void EquipChip(DNAChip chipToEquip) {

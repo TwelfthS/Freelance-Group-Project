@@ -14,6 +14,7 @@ public class Enemy : MonoBehaviour
     public float attackCooldown = 0;
     private float maxCooldown = 1;
     public DNAChip drop;
+    public float moneyDrop;
     void Start()
     {
         hp = GetComponent<HPHandler>();
@@ -77,8 +78,7 @@ public class Enemy : MonoBehaviour
 
     public void LeaveLoot() {
         if (drop != null) {
-            player.GetLoot(drop);
+            player.GetLoot(drop, moneyDrop);
         }
-
     }
 }

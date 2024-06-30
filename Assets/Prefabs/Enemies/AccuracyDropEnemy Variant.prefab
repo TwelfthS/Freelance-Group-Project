@@ -12,6 +12,10 @@ PrefabInstance:
       propertyPath: drop
       value: 
       objectReference: {fileID: 5083534947644575023}
+    - target: {fileID: 2212331711692344362, guid: ea53195a1103ff64a8a9e2191affc9b0, type: 3}
+      propertyPath: moneyDrop
+      value: 5
+      objectReference: {fileID: 0}
     - target: {fileID: 2496376285236392485, guid: ea53195a1103ff64a8a9e2191affc9b0, type: 3}
       propertyPath: m_LocalPosition.x
       value: 15.485125

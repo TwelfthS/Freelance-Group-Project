@@ -18,4 +18,13 @@ public class InventoryItemController : MonoBehaviour
     public void EquipChip() {
         player.EquipChip(chip);
     }
+
+    public void HandleClick() {
+        TradeWindow tw = this.gameObject.transform.parent.gameObject.GetComponent<TradeWindow>();
+        if (tw != null) {
+            tw.Buy(chip);
+        } else {
+            EquipChip();
+        }
+    }
 }

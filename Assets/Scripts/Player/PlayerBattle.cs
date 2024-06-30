@@ -30,7 +30,7 @@ public class PlayerBattle : MonoBehaviour
             } else if (Input.GetKeyDown(KeyCode.Alpha2)) {
                 chooseNextSkill();
             }
-            if (Input.GetKeyDown(KeyCode.Space)) {
+            if (Input.GetKeyDown(KeyCode.Q)) {
                 Attack(currentSkill.damage);
             }
         }
@@ -68,7 +68,9 @@ public class PlayerBattle : MonoBehaviour
             Debug.Log("Enemy hit with " + currentSkill.name + " and got " + damage + " of damage!");
             enemy.Hit(damage);
             if (!enemy.hp.isAlive) {
+                enemy.LeaveLoot();
                 enemies.RemoveAt(0);
+                Destroy(enemy.gameObject);
             }
         }
     }

@@ -21,6 +21,10 @@ PrefabInstance:
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2212331711692344362, guid: ea53195a1103ff64a8a9e2191affc9b0, type: 3}
+      propertyPath: moneyDrop
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 2212331711692344362, guid: ea53195a1103ff64a8a9e2191affc9b0, type: 3}
       propertyPath: moveSpeed
       value: 6
       objectReference: {fileID: 0}

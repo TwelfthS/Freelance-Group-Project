@@ -9,6 +9,10 @@ PrefabInstance:
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 904812136900316499, guid: 9b7a84dd4b02b8b429761b69717304cb, type: 3}
+      propertyPath: price
+      value: 15
+      objectReference: {fileID: 0}
+    - target: {fileID: 904812136900316499, guid: 9b7a84dd4b02b8b429761b69717304cb, type: 3}
       propertyPath: chipName
       value: Attack Chip
       objectReference: {fileID: 0}
