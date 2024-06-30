@@ -26,9 +26,9 @@ public class PlayerBattle : MonoBehaviour
     {
         if (hp.isAlive) {
             if (Input.GetKeyDown(KeyCode.Alpha1)) {
-                chooseNextSkill();
-            } else if (Input.GetKeyDown(KeyCode.Alpha2)) {
                 choosePrevSkill();
+            } else if (Input.GetKeyDown(KeyCode.Alpha2)) {
+                chooseNextSkill();
             }
             if (Input.GetKeyDown(KeyCode.Space)) {
                 Attack(currentSkill.damage);
@@ -63,30 +63,21 @@ public class PlayerBattle : MonoBehaviour
 
     public void Attack(float damage) {
         damage = player.AttackBonuses(damage);
-        Debug.Log(enemies.Count);
         if (enemies.Count > 0) {
             Enemy enemy = enemies[0];
             Debug.Log("Enemy hit with " + currentSkill.name + " and got " + damage + " of damage!");
-            Debug.Log(enemy.gameObject.name);
             enemy.Hit(damage);
             if (!enemy.hp.isAlive) {
-                Debug.Log("here");
                 enemies.RemoveAt(0);
             }
         }
     }
 
-    // public void SetEnemy(Enemy _enemy) {
-    //     enemy = _enemy;
-    // }
-
     void OnTriggerEnter(Collider collider) {
-        Debug.Log(collider.gameObject.name);
         Enemy enemy = collider.gameObject.GetComponent<Enemy>();
         if (enemy != null && !enemies.Contains(enemy)) {
             enemies.Add(enemy);
         }
-        Debug.Log("added " + enemies);
     }
 
     void OnTriggerExit(Collider collider) {
@@ -94,6 +85,5 @@ public class PlayerBattle : MonoBehaviour
         if (enemy != null) {
             enemies.Remove(enemy);
         }
-        Debug.Log("removed" + enemies);
     }
 }

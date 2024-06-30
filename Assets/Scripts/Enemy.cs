@@ -10,8 +10,7 @@ public class Enemy : MonoBehaviour
     public bool seesPlayer = false;
     public Rigidbody rb;
     public float moveSpeed = 3;
-    [SerializeField]
-    private int damage = 4;
+    public int damage = 4;
     public float attackCooldown = 0;
     private float maxCooldown = 1;
     public DNAChip drop;

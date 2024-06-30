@@ -1,12 +1,12 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1001 &5893756626734875185
+--- !u!1001 &4637314274309035845
 PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Modification:
     serializedVersion: 3
-    m_TransformParent: {fileID: 8667505608895082867}
+    m_TransformParent: {fileID: 5512695454061383898}
     m_Modifications:
     - target: {fileID: 2161061319998039835, guid: 81cd177ed5739964b8dd9c9c707769bf, type: 3}
       propertyPath: m_LocalPosition.x
@@ -57,15 +57,10 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 81cd177ed5739964b8dd9c9c707769bf, type: 3}
---- !u!4 &5491987733489575210 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 2161061319998039835, guid: 81cd177ed5739964b8dd9c9c707769bf, type: 3}
-  m_PrefabInstance: {fileID: 5893756626734875185}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &6269910769872436612 stripped
+--- !u!114 &5085384281858943216 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 489175801657786293, guid: 81cd177ed5739964b8dd9c9c707769bf, type: 3}
-  m_PrefabInstance: {fileID: 5893756626734875185}
+  m_PrefabInstance: {fileID: 4637314274309035845}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 0}
   m_Enabled: 1
@@ -73,7 +68,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4dca7cb794274874d840315d7ee7d094, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!1001 &6552107903696552790
+--- !u!4 &6748271381468164190 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 2161061319998039835, guid: 81cd177ed5739964b8dd9c9c707769bf, type: 3}
+  m_PrefabInstance: {fileID: 4637314274309035845}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1001 &7937011944014488319
 PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
@@ -84,26 +84,34 @@ PrefabInstance:
     - target: {fileID: 2212331711692344362, guid: ea53195a1103ff64a8a9e2191affc9b0, type: 3}
       propertyPath: drop
       value: 
-      objectReference: {fileID: 6269910769872436612}
+      objectReference: {fileID: 5085384281858943216}
+    - target: {fileID: 2212331711692344362, guid: ea53195a1103ff64a8a9e2191affc9b0, type: 3}
+      propertyPath: damage
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 2212331711692344362, guid: ea53195a1103ff64a8a9e2191affc9b0, type: 3}
+      propertyPath: moveSpeed
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 2496376285236392485, guid: ea53195a1103ff64a8a9e2191affc9b0, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 9.32
+      value: 4.63
       objectReference: {fileID: 0}
     - target: {fileID: 2496376285236392485, guid: ea53195a1103ff64a8a9e2191affc9b0, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 1.5
+      value: 0.49225068
       objectReference: {fileID: 0}
     - target: {fileID: 2496376285236392485, guid: ea53195a1103ff64a8a9e2191affc9b0, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -2.77
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2496376285236392485, guid: ea53195a1103ff64a8a9e2191affc9b0, type: 3}
       propertyPath: m_LocalRotation.w
-      value: 0.7071068
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2496376285236392485, guid: ea53195a1103ff64a8a9e2191affc9b0, type: 3}
       propertyPath: m_LocalRotation.x
-      value: 0.7071068
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2496376285236392485, guid: ea53195a1103ff64a8a9e2191affc9b0, type: 3}
       propertyPath: m_LocalRotation.y
@@ -115,7 +123,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2496376285236392485, guid: ea53195a1103ff64a8a9e2191affc9b0, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
-      value: 90
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2496376285236392485, guid: ea53195a1103ff64a8a9e2191affc9b0, type: 3}
       propertyPath: m_LocalEulerAnglesHint.y
@@ -127,18 +135,18 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8776562075480167859, guid: ea53195a1103ff64a8a9e2191affc9b0, type: 3}
       propertyPath: m_Name
-      value: BigAttackEnemy Variant
+      value: Slow tough enemy Variant
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects:
     - targetCorrespondingSourceObject: {fileID: 2496376285236392485, guid: ea53195a1103ff64a8a9e2191affc9b0, type: 3}
       insertIndex: -1
-      addedObject: {fileID: 5491987733489575210}
+      addedObject: {fileID: 6748271381468164190}
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ea53195a1103ff64a8a9e2191affc9b0, type: 3}
---- !u!4 &8667505608895082867 stripped
+--- !u!4 &5512695454061383898 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 2496376285236392485, guid: ea53195a1103ff64a8a9e2191affc9b0, type: 3}
-  m_PrefabInstance: {fileID: 6552107903696552790}
+  m_PrefabInstance: {fileID: 7937011944014488319}
   m_PrefabAsset: {fileID: 0}
