@@ -148,6 +148,7 @@ GameObject:
   - component: {fileID: 8294079971877664174}
   - component: {fileID: 6066810998299025300}
   - component: {fileID: 6384979399599096425}
+  - component: {fileID: 8925712640958361191}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -320,6 +321,8 @@ MonoBehaviour:
   currentSkillId: 0
   currentSkill: {fileID: 0}
   attackCollider: {fileID: 0}
+  hp: {fileID: 0}
+  player: {fileID: 0}
 --- !u!114 &8294079971877664174
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -332,9 +335,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3051c8720b2e0954289190b4f0a0f5f8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  activeBattles: []
   hp: {fileID: 0}
   chips: []
+  inventory: {fileID: 0}
+  defaultAccuracy: 0.4
+  defaultCritRate: 0.15
 --- !u!65 &6066810998299025300
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -371,6 +376,21 @@ MonoBehaviour:
   availableSkills:
   - {fileID: 4128335796821271640}
   defaultSkillMastery: 1
+--- !u!114 &8925712640958361191
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2155187282136739511}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e746ce4ae68821e458d4ae33b952c21d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  chips: []
+  itemContent: {fileID: 0}
+  inventoryItem: {fileID: 3681113736698440616, guid: 1766aa6152da19941aa158aca96dd23f, type: 3}
 --- !u!1 &4048233734876984144
 GameObject:
   m_ObjectHideFlags: 0

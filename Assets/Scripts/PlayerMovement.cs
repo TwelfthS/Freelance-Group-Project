@@ -9,20 +9,20 @@ public class PlayerMovement : MonoBehaviour
     float dirZ = 0;
     float moveSpeed = 7;
     public HPHandler hp;
-    // Start is called before the first frame update
     void Start()
     {
         rb = GetComponent<Rigidbody>();
         hp = GetComponent<HPHandler>();
     }
 
-    // Update is called once per frame
     void Update()
     {
         if (hp.isAlive) {
             dirX = Input.GetAxisRaw("Horizontal");
             dirZ = Input.GetAxisRaw("Vertical");
             rb.velocity = new Vector3(dirX * moveSpeed, 0, dirZ * moveSpeed);        
+        } else if (rb.velocity != Vector3.zero) {
+            rb.velocity = Vector3.zero;
         }
 
     }

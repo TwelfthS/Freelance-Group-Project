@@ -44,6 +44,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4dca7cb794274874d840315d7ee7d094, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  chipName: Crit rate Chip
   attackBonus: 0
   accuracy: 0
   critRate: 0.5

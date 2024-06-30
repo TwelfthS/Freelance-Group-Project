@@ -5,12 +5,14 @@ using UnityEngine;
 public class Player : MonoBehaviour
 {
     public HPHandler hp;
-    public List<DNAChip> chips = new List<DNAChip>();
+    public List<DNAChip> chips = new List<DNAChip>(); // equipped chips
+    public InventoryManager inventory;
     public float defaultAccuracy = 0.4f;
     public float defaultCritRate = 0.15f;
     void Start()
     {
         hp = GetComponent<HPHandler>();
+        inventory = GetComponent<InventoryManager>();
     }
 
     void Update()
@@ -39,7 +41,21 @@ public class Player : MonoBehaviour
     }
 
     public void GetLoot(DNAChip drop) {
-        chips.Add(drop);
+        inventory.AddChip(drop);
         drop.transform.parent = transform;
+    }
+
+    public void EquipChip(DNAChip chipToEquip) {
+        if (chips.Contains(chipToEquip)) {
+            chips.Remove(chipToEquip);
+            Debug.Log("Chip " + chipToEquip + " unequipped!");
+        } else {
+            chips.Add(chipToEquip);
+            Debug.Log("Chip " + chipToEquip + " equipped!");
+        }
+    }
+
+    public void UnequipChip(DNAChip chipToUnequip) {
+        chips.Remove(chipToUnequip);
     }
 }
