@@ -12,6 +12,9 @@ public class PlayerBattle : MonoBehaviour
     public Collider attackCollider;
     public HPHandler hp;
     public Player player;
+    [SerializeField] private PopUpWindow popUpWindow;
+    [SerializeField] private GameObject popUpWindowSpawn;
+
 
     void Start()
     {
@@ -58,7 +61,7 @@ public class PlayerBattle : MonoBehaviour
 
     public void pickSkill(Skill skill) {
         currentSkill = skill;
-        Debug.Log("You picked a skill called " + skill.name + "!");
+        popUpWindow.ChangeText("You picked a skill called " + skill.name + "!", popUpWindowSpawn.transform);
     }
 
     public void Attack(float damage) {

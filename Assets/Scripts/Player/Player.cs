@@ -15,6 +15,9 @@ public class Player : MonoBehaviour
     public delegate void OnInventoryChanged();
     public OnInventoryChanged OnChanged;
 
+    [SerializeField] private PopUpWindow popUpWindow;
+    [SerializeField] private GameObject popUpWindowSpawn;
+
     void Start()
     {
         hp = GetComponent<HPHandler>();
@@ -65,13 +68,17 @@ public class Player : MonoBehaviour
         drop.transform.parent = transform; 
     }
 
-    public void EquipChip(DNAChip chipToEquip) {
-        if (chips.Contains(chipToEquip)) {
+    public void EquipChip(DNAChip chipToEquip)
+    {
+        if (chips.Contains(chipToEquip))
+        {
             chips.Remove(chipToEquip);
-            Debug.Log("Chip " + chipToEquip + " unequipped!");
-        } else {
+            popUpWindow.ChangeText("Chip " + chipToEquip + " unequipped!", popUpWindowSpawn.transform);
+        }
+        else
+        {
             chips.Add(chipToEquip);
-            Debug.Log("Chip " + chipToEquip + " equipped!");
+            popUpWindow.ChangeText("Chip " + chipToEquip + " equipped!", popUpWindowSpawn.transform);
         }
     }
 
